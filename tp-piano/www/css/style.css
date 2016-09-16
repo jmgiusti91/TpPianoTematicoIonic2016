@@ -1,1 +1,97 @@
-/* Empty. Add your own CSS if you like */
+
+/* Estilos Autor */
+
+.fondo-autor{
+  width:70%;
+  margin: 10px auto;
+}
+
+.img-perfil {
+  background-image: url("../img/yo.jpg");
+  background-position: center;
+  background-size: 150px 150px;
+  height:150px;
+  width: 150px;
+  margin:0px auto;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border:3px solid #666;
+  position: relative;
+  top:35px;
+  z-index: 4;
+}
+
+
+
+.color-fondo-autor{
+background: #fac695; /* Old browsers */
+background: -moz-linear-gradient(top,  #fac695 0%, #f5ab66 47%, #ef8d31 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #fac695 0%,#f5ab66 47%,#ef8d31 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #fac695 0%,#f5ab66 47%,#ef8d31 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fac695', endColorstr='#ef8d31',GradientType=0 ); /* IE6-9 */
+
+}
+
+.color-fondo-autor-cards{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d6f9ff+0,9ee8fa+100;Blue+3D */
+background: #d6f9ff; /* Old browsers */
+background: -moz-linear-gradient(top,  #d6f9ff 0%, #9ee8fa 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #d6f9ff 0%,#9ee8fa 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #d6f9ff 0%,#9ee8fa 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6f9ff', endColorstr='#9ee8fa',GradientType=0 ); /* IE6-9 */
+
+}/* Empty. Add your own CSS if you like */
+
+
+
+/* Estilos Inicio*/
+
+
+.usuario-nombre{
+  width:100%;
+  background-color:orange;
+  font-size:3em;
+  color:#666;
+  margin-top: 2em;
+}
+
+
+.wrapInicio {
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #f3f3f3 50%, #ededed 51%, #ffffff 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+color:#000;
+margin: 225px auto;
+width:80%;
+height:170px;
+border-radius: 10px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+box-shadow: -10px 10px 5px #888888;
+-moz-box-shadow: -10px 10px 5px #888888;
+-webkit-box-shadow: -10px 10px 5px #888888;
+
+}
+
+.wrapInicio p{
+	text-align: center;
+	font-size: 25px;
+	font-family: 'Baloo Bhaina', cursive;
+}
+
+.fondo-inicio{
+  background-image: url("../img/nature-sounds-png.png");
+  height: 100%;
+  width: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.boton-comenzar{
+	width:100%;
+	margin: 10px auto;
+}

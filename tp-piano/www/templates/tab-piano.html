@@ -1,0 +1,14 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="fondo-inicio">
+    
+  <div ng-hide="Ver">
+      <div class="wrapInicio" style="padding-top:2em;">
+        <p>Disfruta y diviertete con los sonidos de la naturaleza!</p>
+        <input type="text" id="usuario" name="usuario" ng-model="usuario.nombre" class="usuario-nombre" placeholder="Ingresa Nombre" required>
+      <button class="button button-calm boton-comenzar" ng-click="Empezar()" ng-disabled="!usuario.nombre">Comenzar!!!</button>
+
+      </div>
+  </div>
+
+  </ion-content>
+</ion-view>
