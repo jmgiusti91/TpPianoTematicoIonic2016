@@ -1,5 +1,5 @@
 <ion-view view-title="Dashboard">
-  <ion-content class="fondo-inicio">
+  <ion-content class="fondo-inicio" id="ion-cont">
     
   <div ng-hide="Ver">
       <div class="wrapInicio" style="padding-top:2em;">
@@ -8,6 +8,23 @@
       <button class="button button-calm boton-comenzar" ng-click="Empezar()" ng-disabled="!usuario.nombre">Comenzar!!!</button>
 
       </div>
+  </div>
+
+  <div ng-show="Ver">
+    
+    <div class="container">
+      <div class="row center-xs middle-xs cont-botones">
+        <div class="col-md-4 col-sm-6 col-xs-12"><button class="button lluvia" id="lluvia" ng-disabled="toco" ng-click="Sonar('lluvia')"><img src="img/lluvia.png" alt=""></button></div>
+        <div class="col-md-4 col-sm-6 col-xs-12"><button class="button button-energized" id="trueno" ng-disabled="toco" ng-click="Sonar('trueno')"><img src="img/trueno.png" alt=""></button></div>
+        <div class="col-md-4 col-sm-6 col-xs-12"><button class="button button-assertive" id="fuego" ng-disabled="toco" ng-click="Sonar('fuego')"><img src="img/fuego.png" alt=""></button></div>
+      </div>
+      <div class="row center-xs middle-xs cont-botones">
+        <div class="col-md-4 col-sm-6 col-xs-12"><button class="button button-balanced" id="bosque" ng-disabled="toco" ng-click="Sonar('bosque')"><img src="img/bosque.png" alt=""></button></div>
+        <div class="col-md-4 col-sm-6 col-xs-12"><button class="button button-calm" id="mar" ng-disabled="toco" ng-click="Sonar('mar')"><img src="img/mar.png" alt=""></button></div>
+        <div class="col-md-4 col-sm-6 col-xs-12"><button class="button button-dark" id="tornado" ng-disabled="toco" ng-click="Sonar('tornado')"><img src="img/tornado.png" alt=""></button></div>
+      </div>
+    </div>
+
   </div>
 
   </ion-content>

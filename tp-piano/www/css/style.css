@@ -48,6 +48,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6f9ff', end
 /* Estilos Inicio*/
 
 
+.keyboard-open .tabs{
+  display:none;
+  }
+.keyboard-open .has-tabs{
+ bottom:0;
+ }
+
 .usuario-nombre{
   width:100%;
   background-color:orange;
@@ -91,7 +98,62 @@ box-shadow: -10px 10px 5px #888888;
   background-repeat: no-repeat;
 }
 
+.fondo-juego{
+background: rgb(0,183,234); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(0,183,234,1) 0%, rgba(0,158,195,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=0 ); /* IE6-9 */
+
+}
+
 .boton-comenzar{
 	width:100%;
 	margin: 10px auto;
+}
+
+
+
+/* Estilos Piano */
+
+.cont-botones {
+	margin:70px auto;
+}
+
+.button{
+	margin: 20px 0;
+}
+
+.button img{
+	width:250px;
+	height: 100px;
+}
+
+.lluvia{
+	background-color: #C0C0C0;
+}
+
+.button[disabled]{
+  opacity:1;
+}
+
+
+/*Animacion Boton */
+
+@-webkit-keyframes girando {
+  from { -webkit-transform: rotateY(0deg);
+  		transform: rotateY(0deg);    }
+  to   { -webkit-transform: rotateY(-360deg);
+  		transform: rotateY(-360deg); }
+}
+
+.girando {
+   -webkit-animation-name: girando;
+   -webkit-animation-timing-function: linear;
+   -webkit-animation-iteration-count: 3;
+   -webkit-animation-duration: 1s;
+   animation-name: girando;
+   animation-timing-function: linear;
+   animation-iteration-count: 3;
+   animation-duration: 1s;
 }
