@@ -91,7 +91,7 @@ box-shadow: -10px 10px 5px #888888;
 }
 
 .fondo-inicio{
-  background-image: url("../img/nature-sounds-png.png");
+  background-image: url("../img/nature-sounds.jpg");
   height: 100%;
   width: 100%;
   background-size: 100% 100%;
@@ -111,7 +111,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', end
 	width:100%;
 	margin: 10px auto;
 }
-
 
 
 /* Estilos Piano */
