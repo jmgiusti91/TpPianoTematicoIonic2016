@@ -156,3 +156,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', end
    animation-iteration-count: 3;
    animation-duration: 1s;
 }
+
+
+/*Estilos Lectura*/
+
+.oscuro  {
+  background: #444;
+  padding: 60px;
+  }
+   
+#esquina  {
+ background: #fff url(../img/imagen3.jpg) bottom right no-repeat;
+}
+ 
+#esquina p  {
+  padding: 50px;
+  margin: 0;
+  height: 500px;
+}
+
+#esquina  {
+ background: #fff url(../img/imagen3.jpg) bottom right no-repeat;
+ }

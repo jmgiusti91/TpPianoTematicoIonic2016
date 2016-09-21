@@ -60,7 +60,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
           controller: 'AutorCtrl'
         }
       }
-    });
+    })
+
+  .state('tab.lectura', {
+      url: '/lectura',
+      views: {
+        'tab-lectura': {
+          templateUrl: 'templates/tab-lectura.html',
+          controller: 'LecturaCtrl'
+        }
+      }
+    })
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/piano');

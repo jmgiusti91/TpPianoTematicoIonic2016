@@ -2,11 +2,37 @@ angular.module('starter.controllers', [])
 
 .controller('PianoCtrl', function($scope, $ionicPlatform, $timeout, $cordovaNativeAudio, $cordovaVibration, $cordovaFile) {
 
+  $scope.ruta = "";
+
 $scope.Empezar=function(){
     $scope.Ver = true;
 
     $("#ion-cont").removeClass("fondo-inicio");
     $("#ion-cont").addClass("fondo-juego");
+
+
+    /*$ionicPlatform.ready(function(){
+      try{
+        
+        $cordovaFile.checkFile(cordova.file.externalDataDirectory, "rutamp3.txt")
+          .then(function (success) {
+
+            $cordovaFile.removeFile(cordova.file.externalDataDirectory, "rutamp3.txt")
+              .then(function (success) {
+                // success
+              }, function (error) {
+                // error
+              });
+
+          }, function (error) {
+            
+          });
+
+      } catch(ex){
+        console.log(ex.message);
+      }
+
+    });*/
   }
 
 
@@ -115,42 +141,42 @@ $ionicPlatform.ready(function() {
         case 'lluvia':
 
           $("#lluvia").addClass("girando");
-          $scope.ruta = "mp3/lluvia.mp3\n";
+          $scope.ruta += "mp3/lluvia.mp3 - ";
 
         break;
 
         case 'trueno':
 
           $("#trueno").addClass("girando");
-          $scope.ruta = "mp3/trueno.mp3\n";
+          $scope.ruta += "mp3/trueno.mp3 - ";
 
         break;
 
         case 'fuego':
 
           $("#fuego").addClass("girando");
-          $scope.ruta = "mp3/fuego.mp3\n";
+          $scope.ruta += "mp3/fuego.mp3 - ";
 
         break;
 
         case 'bosque':
 
           $("#bosque").addClass("girando");
-          $scope.ruta = "mp3/bosque.mp3\n";
+          $scope.ruta += "mp3/bosque.mp3 - ";
 
         break;
 
         case 'mar':
 
           $("#mar").addClass("girando");
-          $scope.ruta = "mp3/mar.mp3\n";
+          $scope.ruta += "mp3/mar.mp3 - ";
 
         break;
 
         case 'tornado':
 
           $("#tornado").addClass("girando");
-          $scope.ruta = "mp3/tornado.mp3\n";
+          $scope.ruta += "mp3/tornado.mp3 - ";
 
         break;
 
@@ -174,18 +200,16 @@ $ionicPlatform.ready(function() {
     $ionicPlatform.ready(function(){
       try{
 
-        $cordovaFile.checkFile(cordova.file.externalDataDirectory, "rutamp3.txt")
-          .then(function (success) {
-
-            $cordovaFile.writeExistingFile(cordova.file.externalDataDirectory, "rutamp3.txt", $scope.ruta)
+        var arrayJson = $scope.ruta.split(" - ");
+        var archivoJson = {
+          ruta: arrayJson
+        };
+            /*$cordovaFile.writeExistingFile(cordova.file.externalDataDirectory, "rutamp3.txt", archivoJson)
                 .then(function (success) {
 
                 }, function (error) {
                   // error
-                });
-
-
-          }, function (error) {
+                });*/
             
             $cordovaFile.createFile(cordova.file.externalDataDirectory, "rutamp3.txt", true)
               .then(function (success) {
@@ -195,13 +219,12 @@ $ionicPlatform.ready(function() {
               });
 
 
-            $cordovaFile.writeFile(cordova.file.externalDataDirectory, "rutamp3.txt", $scope.ruta, true)
+            $cordovaFile.writeFile(cordova.file.externalDataDirectory, "rutamp3.txt", archivoJson, true)
               .then(function (success) {
 
               }, function (error) {
 
               });
-          });
 
       } catch(ex){
         console.log(ex.message);
@@ -222,5 +245,51 @@ $ionicPlatform.ready(function() {
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+
+})
+
+
+.controller('LecturaCtrl', function($scope, $ionicPlatform, $cordovaFile){
+
+  $ionicPlatform.ready(function(){
+
+    $scope.$on('$ionicView.enter', function(e) {
+      $scope.contenido = "";
+      try{
+      $cordovaFile.checkFile(cordova.file.externalDataDirectory, "rutamp3.txt")
+      .then(function (success) {
+        
+        $cordovaFile.readAsText(cordova.file.externalDataDirectory, "rutamp3.txt")
+          .then(function (exito) {
+            /*var cadenaExito = JSON.stringify(exito);
+            alert(cadenaExito);*/
+            var objJson = JSON.parse(exito);
+            for(var i = 0; i < objJson.ruta.length - 1; i++){
+              $scope.contenido += objJson.ruta[i] + "  ";
+            };
+            //$scope.contenido = JSON.stringify(objJson.ruta);
+
+          }, function (error) {
+            $scope.contenido = "El archivo solocitado no se pudo leer";
+            var cadenaError = JSON.stringify(error);
+            console.log(cadenaError);
+          });
+
+
+
+      }, function (error) {
+        $scope.contenido = "El archivo solocitado no existe";
+        var cadenaError = JSON.stringify(error);
+        console.log(cadenaError);
+      });
+
+    } catch(ex){
+      console.log(ex);
+    }
+
+    });
+    
+
+  })
 
 })
