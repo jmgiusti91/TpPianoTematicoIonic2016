@@ -237,15 +237,23 @@ $ionicPlatform.ready(function() {
 
 })
 
-.controller('AutorCtrl', function($scope) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+.controller('AutorCtrl', function($scope, $ionicPlatform, $cordovaInAppBrowser) {
+  
+  var options = {
+      location: 'yes',
+      clearcache: 'yes',
+      toolbar: 'no'
+    };
 
+  $scope.VerGitHub=function(){
+    $ionicPlatform.ready(function(){
+
+      $cordovaInAppBrowser.open('https://github.com/jmgiusti91', '_system', options);
+
+    });
+    
+  }
+  
 })
 
 
